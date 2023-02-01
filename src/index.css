@@ -1,13 +1,89 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --Bright-Blue: hsl(220, 98%, 61%);
+  --Check-Background: linear-gradient(
+    0deg,
+    rgba(87, 221, 255, 1) 0%,
+    rgba(192, 88, 243, 1) 100%
+  );
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.dark {
+  --Very-Dark-Blue: hsl(235, 21%, 11%);
+  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+  --Light-Grayish-Blue: hsl(234, 39%, 85%);
+  --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  /* --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%); */
+  --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+}
+
+* {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--Very-Dark-Blue);
+}
+
+/* scroll bar css style */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.header {
+  background: url(./images/bg-desktop-dark.jpg) no-repeat;
+  background-size: cover;
+  letter-spacing: 1.25rem;
+}
+
+@media only screen and (max-width: 425px) {
+  .header {
+    letter-spacing: 0.25rem;
+  }
+}
+
+.form-item,
+.todo-list {
+  background-color: var(--Very-Dark-Desaturated-Blue);
+}
+
+.submitBtn {
+  border-color: var(--Light-Grayish-Blue);
+}
+.submitBtn:active {
+  background: url(./images/icon-check.svg) no-repeat center,
+    var(--Check-Background);
+}
+
+.doneBtn {
+  background: url(./images/icon-check.svg) no-repeat center,
+    var(--Check-Background);
+}
+
+.sort {
+  bottom: -3rem;
 }
