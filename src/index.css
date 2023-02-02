@@ -12,13 +12,17 @@
 }
 
 .dark {
-  --Very-Dark-Blue: hsl(235, 21%, 11%);
-  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
-  --Light-Grayish-Blue: hsl(234, 39%, 85%);
-  --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
-  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
-  /* --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%); */
-  --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+  --background-color: hsl(235, 21%, 11%); /*background*/
+  --todo-background: hsl(235, 24%, 19%); /*todo background*/
+  --font-color: hsl(234, 39%, 85%);
+  --border-color: hsl(234, 39%, 85%, 0.2); /*border*/
+}
+
+.light {
+  --background-color: hsl(236, 33%, 92%); /*background*/
+  --todo-background: hsl(0, 0%, 98%); /*todo background*/
+  --font-color: hsl(235, 19%, 35%);
+  --border-color: hsl(236, 33%, 92%); /*border*/
 }
 
 * {
@@ -27,7 +31,7 @@
 
 body {
   margin: 0;
-  background-color: var(--Very-Dark-Blue);
+  background-color: var(--background-color);
 }
 
 /* scroll bar css style */
@@ -68,12 +72,20 @@ body {
 
 .form-item,
 .todo-list {
-  background-color: var(--Very-Dark-Desaturated-Blue);
+  background-color: var(--todo-background);
+  color: var(--font-color);
 }
 
 .submitBtn {
-  border-color: var(--Light-Grayish-Blue);
+  /* border-color: var(--Light-Grayish-Blue); */
+  border-color: var(--font-color);
 }
+
+.submitBtn:hover,
+.hoverEff:hover {
+  border-color: rgba(192, 88, 243, 1);
+}
+
 .submitBtn:active {
   background: url(./images/icon-check.svg) no-repeat center,
     var(--Check-Background);
@@ -84,6 +96,28 @@ body {
     var(--Check-Background);
 }
 
+.show-close {
+  display: none;
+}
+
+.show-close:hover {
+  display: block;
+}
+
+.list-display {
+  /* border-bottom: 1px solid var(--Very-Light-Grayish-Blue); */
+  border-bottom: 1px solid var(--border-color);
+}
+
 .sort {
   bottom: -3rem;
+}
+
+.active-color {
+  color: var(--Bright-Blue);
+  opacity: 1;
+}
+
+.clear-completed:active {
+  color: var(--Bright-Blue);
 }

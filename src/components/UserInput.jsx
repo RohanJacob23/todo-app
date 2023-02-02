@@ -20,7 +20,7 @@ function UserInput() {
   return (
     <div>
       <form action="" onSubmit={handleSubmit}>
-        <div className="form-item flex items-center w-4/5 max-w-lg m-auto relative bottom-32 p-4 rounded-md">
+        <div className="form-item flex items-center w-4/5 max-w-lg m-auto relative bottom-32 p-4 rounded-md shadow-lg">
           <button
             type="submit"
             className="submitBtn rounded-full border h-5 w-5 md:w-6 md:h-6 outline-none"
@@ -30,7 +30,7 @@ function UserInput() {
             name="todoInput"
             id="todoInput"
             placeholder="Create a new todo..."
-            className="bg-transparent outline-none text-white ml-4 mt-1 w-full md:text-lg"
+            className="bg-transparent outline-non ml-4 mt-1 w-full md:text-lg outline-none"
             onChange={handleInput}
             value={val}
             autoComplete="Off"

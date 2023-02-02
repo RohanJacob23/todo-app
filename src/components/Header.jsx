@@ -19,7 +19,7 @@ function Header() {
     light: {
       icon: moonIcon,
       class: "light",
-      bg: window.innerWidth >= 425 ? bgMobileLight : bgDeskTopLight,
+      bg: window.innerWidth <= 425 ? bgMobileLight : bgDeskTopLight,
     },
   };
   // using useState hook to render the page after udpating the theme

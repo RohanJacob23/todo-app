@@ -50,6 +50,7 @@ function ContextProvider({ children }) {
     });
   }
 
+  // fuction to clear all the completed task
   function clear() {
     setTask((prev) => {
       const updated = prev.filter((list) => !list.done);
